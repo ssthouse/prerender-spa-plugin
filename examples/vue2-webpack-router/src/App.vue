@@ -3,9 +3,9 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <p>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/contact">Contact</router-link>
+      <router-link to="./">Home</router-link>
+      <router-link to="./about">About</router-link>
+      <router-link to="./contact">Contact</router-link>
     </p>
     <router-view></router-view>
   </div>
@@ -14,10 +14,15 @@
 <script>
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       msg: 'Welcome to your prerender-spa-plugin Vuejs 2.0 demo app!'
     }
+  },
+  created() {
+    setTimeout(() => {
+      console.log('hi' + Math.random())
+    }, 4000)
   }
 }
 </script>
@@ -32,7 +37,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 

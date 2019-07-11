@@ -76,8 +76,9 @@ if (process.env.NODE_ENV === 'production') {
         inject: {
           foo: 'bar'
         },
-        headless: true,
-        renderAfterDocumentEvent: 'render-event'
+        headless: false,
+        renderAfterTime: 20000,
+        // renderAfterDocumentEvent: 'render-event'
       })
     })
   ])

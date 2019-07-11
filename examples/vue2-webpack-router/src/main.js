@@ -5,12 +5,15 @@ import App from './App.vue'
 Vue.use(VueRouter)
 
 const Home = { template: '<div><h2>Home Page</h2></div>' }
-const About = { template: '<div><h2>About Page</h2></div>' }
 const Contact = { template: '<div><h2>Contact Page</h2></div>' }
+// import About from './About.vue'
+// const About = import("./About.vue")
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: About },
+  { path: '/about', component: () => {
+    return import("./About.vue")
+  } },
   { path: '/contact', component: Contact }
 ]
 
